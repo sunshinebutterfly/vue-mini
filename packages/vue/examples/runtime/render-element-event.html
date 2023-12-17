@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+<script>
+	const {h, render} = Vue
+
+	
+	const vnode = h('button',{
+		onClick(){
+			alert('点击')
+		}
+	},'点击')
+	render(vnode,document.querySelector('#app'))
+	setTimeout(()=>{
+		const vnode2 = h('button',{
+			ondblclick(){
+				alert('双击')
+			}
+		},'update')
+		render(vnode2,document.querySelector('#app'))
+	}, 2000)
+
+</script> 
+
+</html>

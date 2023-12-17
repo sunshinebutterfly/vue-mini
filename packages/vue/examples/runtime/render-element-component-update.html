@@ -1,0 +1,36 @@
+<html>
+
+<head>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+<script>
+	const {h, render} = Vue
+
+	
+	const com = {
+		render(){
+			return h('div','hel2o') 
+		}
+	}
+
+	const v = h(com)
+	render(v,document.querySelector('#app'))
+
+	setTimeout(()=>{
+		const com2 = {
+		render(){
+			return h('div','update')  
+		}
+	}
+
+	const v2 = h(com2)
+	render(v2,document.querySelector('#app'))
+	},2000)
+</script> 
+
+</html>

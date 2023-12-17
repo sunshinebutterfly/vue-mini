@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+<script>
+	const {h, render} = Vue
+
+	
+	const com = {
+		render(){
+			return h('div','hel2o') 
+		}
+	}
+
+	const v = h(com)
+	render(v,document.querySelector('#app'))
+
+</script> 
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="../../dist/vue.js"></script>
+</head>
+<body>
+	<div id="app"></div>
+</body>
+
+<script>
+	const {reactive, effect} = Vue
+	const obj1 = {
+		name:'aaa'
+	}
+	var p = new Proxy(obj1, {
+		get: function (target, property, receiver) {
+		},
+	});
+	console.log(p)
+	const obj = reactive({
+		name: '张三'
+	})
+	console.log(obj.name)
+effect(()=> {
+	document.querySelector('#app').innerText=obj.name
+})
+
+//obj.name = '李四'
+</script>
+</html> 
